@@ -7,11 +7,11 @@ import { connect } from 'react-redux';
 class ListItem extends Component {
 
     renderDescription() {
-        const { id, description } = this.props.library
+        const { library, selectedLibraryId } = this.props;
 
-        if (id === this.props.selectLibraryId) {
+        if (library.id === selectedLibraryId) {
             return (
-                <Text>{description}</Text>
+                <Text>{library.description}</Text>
             );
         }
     }
@@ -46,7 +46,7 @@ const styles = {
 };
 
 const mapStateToProps = state => {
-    return { selectLibraryId: state.selectLibraryId }
+    return { selectedLibraryId: state.selectedLibraryId }
 }
 
 export default connect(mapStateToProps, actions)(ListItem);
