@@ -1,6 +1,6 @@
-export default (state, action) => {
-    switch(action.type) {
-        case 'select-library':
+export default (state = null, action) => {
+    switch (action.type) {
+        case 'select_library':
             return action.payload;
         default:
             return state;
